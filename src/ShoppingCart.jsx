@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Product from "./Product";
+const _ = require('lodash');
 
 class ShoppingCart extends Component {
   //Executes when the component is mounted
@@ -77,7 +78,8 @@ class ShoppingCart extends Component {
   handleIncrement = (product, maxValue) => {
     //get index of selected product
     let allProducts = [...this.state.products];
-    let index = allProducts.indexOf(product);
+    let index = _.indexOf(allProducts,product);
+    //let index = allProducts.indexOf(product);
 
     if (allProducts[index].quantity < maxValue) {
       allProducts[index].quantity++;
@@ -89,7 +91,8 @@ class ShoppingCart extends Component {
   handleDecrement = (product, minValue) => {
     //get index of selected product
     let allProducts = [...this.state.products];
-    let index = allProducts.indexOf(product);
+    let index = _.indexOf(allProducts,product);
+    //let index = allProducts.indexOf(product);
 
     if (allProducts[index].quantity > minValue) {
       allProducts[index].quantity--;
@@ -101,7 +104,8 @@ class ShoppingCart extends Component {
   handleDelete = (product) => {
     //get index of select product
     let allProducts = [...this.state.products];
-    let index = allProducts.indexOf(product);
+    let index = _.indexOf(allProducts, product)
+    // let index = allProducts.indexOf(product);
 
     if (window.confirm("Are you sure you want to delete this item?")) {
       //delete product based on index
