@@ -25,7 +25,7 @@ class ShoppingCart extends Component {
     return (
       <div>
         <div className="container-fluid">
-          <div data-testid='titleShoppingCart'>
+          <div>
           <h4>Shopping Cart</h4>
           </div>
 
@@ -38,7 +38,6 @@ class ShoppingCart extends Component {
                   onIncrement={this.handleIncrement}
                   onDecrement={this.handleDecrement}
                   onDelete={this.handleDelete}
-                  updateTotal={this.updateTotal}
                 >
                   <button className="btn btn-primary">Add to Cart</button>
                 </Product>
