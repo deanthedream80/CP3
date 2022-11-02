@@ -23,7 +23,7 @@ class NavBar extends Component {
       </li>
 
       <li className="nav-item">
-        <a className="nav-link" href="/cart">Shop</a>
+        <a data-testid='webshop' className="nav-link" href="/cart">Shop</a>
       </li>
 
     <ul className='navbar-nav float-right'>
