@@ -16,6 +16,7 @@ class Product extends Component {
           <div className="card-body">
             <div className="text-muted">
               # {this.state.product.id}
+              {this.props.updateTotal(this.state.product)}
               <span
                 className="fa fa-times float-right hand-icon"
                 onClick={() => {

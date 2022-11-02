@@ -9,7 +9,7 @@ class ShoppingCart extends Component {
     super(props); //calling the super class's constructor
     //initiation of the state
     this.state = {
-      products: [
+      products: [ 
         { id: 1, productName: "hat", price: 20, quantity: 0 },
         { id: 2, productName: "tshirt1", price: 25, quantity: 0 },
         { id: 3, productName: "tshirt2", price: 25, quantity: 0 },
@@ -25,7 +25,9 @@ class ShoppingCart extends Component {
     return (
       <div>
         <div className="container-fluid">
+          <div data-testid='titleShoppingCart'>
           <h4>Shopping Cart</h4>
+          </div>
 
           <div className="row d-flex">
             {this.state.products.map((prod) => {
@@ -36,8 +38,9 @@ class ShoppingCart extends Component {
                   onIncrement={this.handleIncrement}
                   onDecrement={this.handleDecrement}
                   onDelete={this.handleDelete}
+                  updateTotal={this.updateTotal}
                 >
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button className="btn btn-primary">Add to Cart</button>
                 </Product>
               );
             })}
@@ -114,6 +117,7 @@ class ShoppingCart extends Component {
       this.setState({ products: allProducts });
     }
   };
+
 }
 
 export default ShoppingCart;
