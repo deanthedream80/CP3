@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
+  "main":"server.js",
+  "engines": {
+    "npm": "8.11.0",
+    "node": "16.16.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
@@ -25,7 +30,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "heroku-postbuild": "npm install",
+    "start": "node server.js",
     "build": "react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
     "predeploy": "npm run build",
